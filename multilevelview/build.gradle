@@ -33,7 +33,7 @@ afterEvaluate {
                 from components.findByName("release")
                 groupId = "com.github.NiravArgon"
                 artifactId = "multilevelrecyclerview"
-                version = "0.0.3"
+                version = "0.0.4"
             }
         }
     }
