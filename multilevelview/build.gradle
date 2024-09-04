@@ -1,5 +1,8 @@
-apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
+plugins {
+    id("com.android.library")
+    id("maven-publish")
+}
+
 android {
 
     compileSdk 34
@@ -26,11 +29,24 @@ dependencies {
 }
 
 
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            release(MavenPublication) {
+//                from components.findByName("release")
+//                groupId = "com.github.NiravArgon"
+//                artifactId = "multilevelrecyclerview"
+//                version = "0.0.4"
+//            }
+//        }
+//    }
+//}
+
 afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
-                from components.findByName("release")
+                from(components.findByName("release"))
                 groupId = "com.github.NiravArgon"
                 artifactId = "multilevelrecyclerview"
                 version = "0.0.4"
